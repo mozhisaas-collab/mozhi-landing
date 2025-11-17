@@ -10,9 +10,9 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    // Ensure images work properly on Netlify
-    // Next.js 16 with @netlify/plugin-nextjs handles image optimization automatically
-    formats: ['image/avif', 'image/webp'],
+    // Disable optimization to ensure images work on Netlify
+    // Images will load directly without Next.js optimization
+    unoptimized: true,
   },
 };
 
