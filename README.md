@@ -14,3 +14,5 @@ pnpm dev
 bun dev
 ```
 # mozhi-landing
+
+Mozhi Landing Page - Built with Next.js
