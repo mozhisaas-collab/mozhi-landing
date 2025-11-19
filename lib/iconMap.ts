@@ -3,7 +3,7 @@ import {
   FileText, Mic, Globe, GraduationCap, Wrench, TestTube, Languages, 
   Video, Users, Code, TrendingUp, MessageSquare, Laptop, Heart, 
   ShoppingCart, Scale, Film, Building2, Plane, Zap, Cpu, Landmark, 
-  Megaphone, Factory, Package, Phone, Search, ShieldCheck, Rocket 
+  Megaphone, Factory, Package, Phone, Gamepad2
 } from "lucide-react";
 
 export const iconMap: Record<string, any> = {
@@ -33,6 +33,7 @@ export const iconMap: Record<string, any> = {
   "fas fa-industry": Factory,
   "fas fa-box": Package,
   "fas fa-signal": Phone,
+  "fas fa-gamepad": Gamepad2,
 };
 
 // Direct icon name mapping (for services.ts)

@@ -7,35 +7,8 @@ import Industries from "@/components/Industries";
 import BlogSection from "@/components/BlogSection";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import { Tag, Users, Shield, Clock } from "lucide-react";
+import { Tag, Users, Shield, Clock, Globe } from "lucide-react";
 import { motion } from "framer-motion";
-
-const trustIndicators = [
-  "Microsoft", "Samsung", "Nike", "Spotify", "Airbnb", "Netflix"
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.4, 0, 0.2, 1] as const
-    }
-  }
-};
 
 export default function Home() {
   return (
@@ -49,45 +22,6 @@ export default function Home() {
       <main className="pt-16">
         <Hero />
         
-        {/* Trust Indicators */}
-        <motion.section 
-          className="py-12 bg-black-subtle"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <motion.div 
-              className="text-center mb-8"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <p className="font-medium text-black">Trusted by leading companies worldwide</p>
-            </motion.div>
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {trustIndicators.map((company, index) => (
-                <motion.div 
-                  key={company}
-                  className="p-4 rounded-lg shadow-sm flex items-center justify-center h-16 hover-lift transition-smooth bg-white"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                >
-                  <span className="font-semibold text-black">{company}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.section>
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +62,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  Why Choose Mozhi Solutions
+                Why Choose Mozhi Solution
                 </motion.h2>
                 <motion.p 
                   className="text-xl mb-8 text-black-subtle"
@@ -137,16 +71,16 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  With over 15 years of experience, we deliver accurate, culturally-adapted translations 
-                  that help businesses succeed in global markets.
+                 With over 5 years of experience, we deliver accurate, culturally-adapted translations that help businesses succeed in global markets.
                 </motion.p>
 
                 <div className="space-y-6">
                   {[
-                    { icon: Tag, title: "ISO 17100 Certified", desc: "International quality standards for translation services" },
-                    { icon: Users, title: "Native Expert Linguists", desc: "1000+ certified translators with industry specialization" },
-                    { icon: Shield, title: "Data Security & Confidentiality", desc: "SOC 2 compliant with strict confidentiality agreements" },
-                    { icon: Clock, title: "Fast Turnaround Times", desc: "Rush projects completed within 24 hours when needed" }
+                    { icon: Tag, title: "Native Expert Linguists", desc: "1000+ certified translators with domain-specific expertise" },
+                    { icon: Users, title: "Data Security & Confidentiality", desc: "Strict confidentiality and NDA adherence for every project" },
+                    { icon: Clock, title: "Fast Turnaround Times", desc: "Rush projects completed within 24 hours when needed" },
+                    { icon: Shield, title: "Multi-Industry Expertise", desc: "Ensures accurate terminology and compliance with industry standards" },
+                    { icon: Globe, title: "End-to-End Localization Services", desc: "One-stop solution for E-Learning, websites, software, apps, and global content" }
                   ].map((item, index) => {
                     const Icon = item.icon;
                     return (

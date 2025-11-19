@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { services } from "@/data/services";
+import { services } from "@/data/solutions";
 import { serviceIconMap } from "@/lib/iconMap";
 import { FileText } from "lucide-react";
 import { motion } from "framer-motion";
@@ -45,10 +45,10 @@ export default function Services() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black">
-            Our Translation Services
+          Our Services
           </h2>
           <p className="text-lg max-w-3xl mx-auto text-black-subtle">
-            Comprehensive language solutions tailored to your business needs across all industries and platforms
+          Comprehensive language solutions tailored to your business needs across all industries and platforms
           </p>
         </motion.div>
 
@@ -83,7 +83,7 @@ export default function Services() {
                     {service.shortDescription}
                   </CardDescription>
                   <Link 
-                    href={`/services/${service.id}`}
+                    href={`/solutions/${service.id}`}
                       className="font-semibold text-sm inline-flex items-center gap-1 transition-smooth hover-red text-red-500 mt-auto"
                   >
                     Learn More →
@@ -111,7 +111,7 @@ export default function Services() {
             asChild
               className="hover-lift transition-smooth bg-red-600 text-white"
           >
-              <Link href="/services" className="text-white">View All Services</Link>
+              <Link href="/solutions" className="text-white">View All Solutions</Link>
           </Button>
           </motion.div>
         </motion.div>

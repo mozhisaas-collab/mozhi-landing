@@ -35,7 +35,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
             <div className="flex items-center gap-2 text-sm">
               <Link href="/" className="text-black/80 hover:text-red-500 transition-colors font-medium">Home</Link>
               <span className="text-black/60">/</span>
-              <Link href="/services" className="text-black/80 hover:text-red-500 transition-colors font-medium">Services</Link>
+              <Link href="/solutions" className="text-black/80 hover:text-red-500 transition-colors font-medium">Solutions</Link>
               <span className="text-black/70">/</span>
               <span className="text-black">{service.title}</span>
             </div>
@@ -102,7 +102,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h2 className="text-3xl font-bold mb-8 text-black">Service Features</h2>
+                  <h2 className="text-3xl font-bold mb-8 text-black">Solution Features</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     {service.features.map((feature, index) => (
                       <motion.div 
@@ -189,7 +189,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
                           </Button>
                           <div className="text-center">
                             <p className="text-sm text-black/70">Or call us directly</p>
-                            <p className="text-lg font-semibold text-red-500">+1 (555) 123-4567</p>
+                            <p className="text-lg font-semibold text-red-500">+91 9884068064</p>
                           </div>
                         </div>
                       </CardContent>
@@ -205,7 +205,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
                   >
                     <Card className="bg-white border border-black/10">
                       <CardContent className="p-6">
-                        <h3 className="text-xl font-bold mb-4 text-black">Service Stats</h3>
+                        <h3 className="text-xl font-bold mb-4 text-black">Solution Stats</h3>
                         <div className="space-y-4">
                           <div className="flex justify-between items-center">
                             <span className="text-black/70">Languages Supported</span>
@@ -238,9 +238,9 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center">
               <Button asChild variant="outline" className="border-black/10 text-black hover:bg-black/5">
-                <Link href="/services">
+                <Link href="/solutions">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  All Services
+                  All Solutions
                 </Link>
               </Button>
               <Button asChild className="bg-red-500 text-white hover:bg-red-500 transition-colors font-semibold">

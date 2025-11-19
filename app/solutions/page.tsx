@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { services } from "@/data/services";
+import { services } from "@/data/solutions";
 import { serviceIconMap } from "@/lib/iconMap";
 import { FileText, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -53,7 +53,7 @@ export default function Services() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Comprehensive Translation Services
+                Comprehensive Translation Solutions
               </motion.h1>
               <motion.p 
                 className="text-xl text-black/70 mb-8 leading-relaxed"
@@ -122,7 +122,7 @@ export default function Services() {
                           whileHover={{ x: 5 }}
                         >
                           <Link 
-                            href={`/services/${service.id}`}
+                            href={`/solutions/${service.id}`}
                             className="inline-flex items-center text-red-500 font-semibold hover:text-red-500 transition-smooth"
                           >
                             Learn More <ArrowRight className="ml-2 h-4 w-4" />

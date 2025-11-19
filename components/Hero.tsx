@@ -60,14 +60,13 @@ export default function Hero() {
               className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6"
               variants={itemVariants}
             >
-              Professional Translation & Localization Services
+             Professional Translation & Localization Services
             </motion.h1>
             <motion.p 
               className="text-xl text-white/95 mb-8 leading-relaxed"
               variants={itemVariants}
             >
-              Bridge language barriers and expand your global reach with our expert translation services. 
-              Trusted by Fortune 500 companies across 14+ industries.
+            Bridge language barriers and expand your global reach with our expert translation services. Trusted by Fortune 500 companies across 15+ industries.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 mb-8"
@@ -104,9 +103,9 @@ export default function Hero() {
               variants={itemVariants}
             >
               {[
-                { text: "ISO 17100 Certified" },
-                { text: "24/7 Support" },
-                { text: "150+ Languages" }
+              { text: "150+ Languages" },
+                { text: "24/7 Support" }
+             
               ].map((item, index) => (
                 <motion.div 
                   key={item.text}

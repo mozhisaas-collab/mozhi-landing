@@ -10,8 +10,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    // Disable optimization to ensure images work on Netlify
-    // Images will load directly without Next.js optimization
     unoptimized: true,
   },
 };

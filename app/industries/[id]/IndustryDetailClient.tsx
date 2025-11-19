@@ -90,7 +90,7 @@ export function IndustryDetailClient({ industry, relatedPosts }: IndustryDetailC
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                {industry.title} Translation Services
+                {industry.title} Translation Solutions
               </motion.h1>
               <motion.p 
                 className="text-xl text-black/70 mb-8 leading-relaxed"
@@ -252,7 +252,7 @@ export function IndustryDetailClient({ industry, relatedPosts }: IndustryDetailC
                           </Button>
                           <div className="text-center">
                             <p className="text-sm text-black/70">Or call our specialists</p>
-                            <p className="text-lg font-semibold text-red-500">+1 (555) 123-4567</p>
+                            <p className="text-lg font-semibold text-red-500">+91 9884068064</p>
                           </div>
                         </div>
                       </CardContent>

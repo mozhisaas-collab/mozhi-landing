@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+1 (555) 123-4567", "24/7 Support Available"],
-    link: "tel:+15551234567"
+    details: ["+91 9884068064", "24/7 Support Available"],
+    link: "tel:+919884068064"
   },
   {
     icon: Mail,
@@ -271,7 +271,7 @@ export default function Contact() {
             >
               <h2 className="text-4xl font-bold mb-4 text-black">Frequently Asked Questions</h2>
               <p className="text-xl text-black-subtle">
-                Quick answers to common questions about our services
+                Quick answers to common questions about our solutions
               </p>
             </motion.div>
 
@@ -287,11 +287,11 @@ export default function Contact() {
                 },
                 {
                   question: "How do you ensure translation quality?",
-                  answer: "We follow ISO 17100 standards with a multi-step process: translation by certified native speakers, review by a second linguist, and final quality assurance check. All projects include terminology management and consistency checks."
+                  answer: "We follow a multi-step process: translation by certified native speakers, review by a second linguist, and final quality assurance check. All projects include terminology management and consistency checks."
                 },
                 {
                   question: "Is my content secure and confidential?",
-                  answer: "Absolutely. We're SOC 2 compliant and all team members sign strict confidentiality agreements. We use secure file transfer protocols and can accommodate specific security requirements for sensitive projects."
+                  answer: "Absolutely. All team members sign strict confidentiality agreements. We use secure file transfer protocols and can accommodate specific security requirements for sensitive projects."
                 }
               ].map((faq, index) => (
                 <motion.div

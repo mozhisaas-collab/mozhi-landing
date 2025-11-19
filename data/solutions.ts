@@ -18,7 +18,6 @@ export const services: Service[] = [
     icon: "FileText",
     features: [
       "Native linguist translators",
-      "ISO 17100 certified process",
       "Industry specialization",
       "Quality assurance review",
       "Cultural adaptation",

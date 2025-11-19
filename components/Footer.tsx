@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, Facebook, CheckCircle, Shield } from "lucide-react";
+import { Linkedin, Twitter, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { industries } from "@/data/industries";
-import { services } from "@/data/services";
+import { services } from "@/data/solutions";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Services */}
           <motion.div variants={itemVariants}>
-            <h3 className="font-semibold mb-4 text-black">Services</h3>
+            <h3 className="font-semibold mb-4 text-black">Solutions</h3>
             <ul className="space-y-2 text-sm">
               {services.slice(0, 6).map((service) => (
                 <motion.li 
@@ -100,7 +100,7 @@ export default function Footer() {
                   whileHover={{ x: 5 }}
                 >
                   <Link 
-                    href={`/services/${service.id}`} 
+                    href={`/solutions/${service.id}`} 
                     className="px-2 py-1 rounded transition-smooth text-black-subtle hover:text-red-500 block"
                   >
                     {service.title}
@@ -166,22 +166,6 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-black/70">
               © {new Date().getFullYear()} Mozhi Solutions. All rights reserved.
-            </div>
-            <div className="flex items-center gap-6">
-              <motion.div 
-                className="flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
-              >
-                <CheckCircle className="h-4 w-4 text-red-600" />
-                <span className="text-sm text-black/70">ISO 17100 Certified</span>
-              </motion.div>
-              <motion.div 
-                className="flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Shield className="h-4 w-4 text-red-600" />
-                <span className="text-sm text-black/70">SOC 2 Compliant</span>
-              </motion.div>
             </div>
           </div>
         </motion.div>

@@ -29,15 +29,7 @@ const testimonials = [
     avatar: "AR",
     rating: 5,
     content: "Their legal document translation services are unmatched. Attention to detail and accuracy are exceptional."
-  },
-  // {
-  //   id: 4,
-  //   name: "James Park",
-  //   title: "Product Manager, CloudSync Solutions",
-  //   avatar: "JP",
-  //   rating: 5,
-  //   content: "From initial consultation to final delivery, the entire process was smooth. The team understood our technical requirements perfectly."
-  // }
+  }
 ];
 
 const containerVariants = {
@@ -119,23 +111,6 @@ export default function Testimonials() {
                   <blockquote className="text-base mb-6 text-black flex-1">
                   "{testimonial.content}"
                 </blockquote>
-                  <div className="flex items-center gap-3 mt-auto">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                    >
-                  <Avatar>
-                    <AvatarFallback className="font-semibold bg-red-600 text-white">
-                      {testimonial.avatar}
-                    </AvatarFallback>
-                  </Avatar>
-                    </motion.div>
-                  <div>
-                    <div className="font-semibold text-black">{testimonial.name}</div>
-                      <div className="text-sm text-black-subtle">
-                      {testimonial.title}
-                    </div>
-                  </div>
-                </div>
               </CardContent>
             </Card>
             </motion.div>

@@ -1,4 +1,4 @@
-import { getServiceById } from "@/data/services";
+import { getServiceById } from "@/data/solutions";
 import { notFound } from "next/navigation";
 import { ServiceDetailClient } from "./ServiceDetailClient";
 

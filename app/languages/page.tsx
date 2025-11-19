@@ -5,9 +5,8 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Globe, Users, CheckCircle } from "lucide-react";
+import { Globe, Users, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -136,7 +135,7 @@ export default function Languages() {
                   <Link href="/contact">Get Quote in Your Language</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors font-semibold">
-                  <Link href="/services">View Our Services</Link>
+                  <Link href="/solutions">View Our Solutions</Link>
                 </Button>
               </motion.div>
             </div>
@@ -269,7 +268,7 @@ export default function Languages() {
                     },
                     {
                       title: "Quality Assurance",
-                      description: "ISO 17100 certified process with multiple quality checks and linguistic review."
+                      description: "Multiple quality checks and linguistic review process."
                     }
                   ].map((item, index) => (
                     <motion.div 

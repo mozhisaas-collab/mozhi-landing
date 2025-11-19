@@ -16,7 +16,7 @@ export interface Industry {
 export const industries: Industry[] = [
   {
     id: "elearning",
-    title: "E-learning",
+    title: "E-Learning",
     description: "Educational platforms & content localization for global learning experiences",
     icon: "fas fa-laptop",
     challenges: [
@@ -431,6 +431,36 @@ export const industries: Industry[] = [
         "90% customer understanding",
         "300% service adoption rate",
         "Successful 15-country launch"
+      ]
+    }
+  },
+  {
+    id: "gaming",
+    title: "Gaming",
+    description: "Video game localization and cultural adaptation for global gaming markets",
+    icon: "fas fa-gamepad",
+    challenges: [
+      "Cultural content adaptation",
+      "Voice acting localization",
+      "UI/UX culturalization",
+      "Marketing material translation",
+      "Community management"
+    ],
+    solutions: [
+      "Game content localization",
+      "Professional voice acting",
+      "Cultural gameplay adaptation",
+      "Marketing localization",
+      "Community support translation"
+    ],
+    services: ["Software Localization", "Voice Over", "Multimedia Solutions"],
+    caseStudy: {
+      title: "AAA Game Global Launch",
+      description: "Localized major game title for 20+ markets with full voice acting",
+      results: [
+        "5M+ downloads in first month",
+        "95% positive reviews",
+        "Top 10 in 15 countries"
       ]
     }
   }

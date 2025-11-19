@@ -190,7 +190,6 @@ export const blogPosts: BlogPost[] = [
       <p>Healthcare translations must meet the highest quality standards, including:</p>
       <ul>
         <li>ISO 13485 for medical device translations</li>
-        <li>ISO 17100 for translation services</li>
         <li>Good Clinical Practice (GCP) guidelines</li>
         <li>Qualified person review requirements</li>
       </ul>

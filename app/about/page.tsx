@@ -20,7 +20,7 @@ const values = [
   {
     icon: Shield,
     title: "Quality & Accuracy",
-    description: "We maintain the highest standards with ISO 17100 certification and rigorous quality assurance processes."
+    description: "We maintain the highest standards with rigorous quality assurance processes."
   },
   {
     icon: Users,
@@ -40,8 +40,6 @@ const values = [
 ];
 
 const certifications = [
-  "ISO 17100:2015 Translation Services",
-  "SOC 2 Type II Compliance",
   "GDPR Compliant Data Processing",
   "ATA Corporate Member",
   "GALA Associate Member"
@@ -193,7 +191,7 @@ export default function About() {
                     innovation, and an unwavering commitment to our clients' success.
                   </p>
                   <p className="text-black-subtle">
-                    Today, we're proud to be an ISO 17100 certified company with a global network of over 1000 
+                    Today, we're proud to have a global network of over 1000 
                     expert linguists, helping businesses communicate effectively in 150+ languages.
                   </p>
                 </div>
@@ -404,7 +402,7 @@ export default function About() {
                 <Link href="/contact">Get Free Quote</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors font-semibold">
-                <Link href="/services">View Our Services</Link>
+                <Link href="/solutions">View Our Solutions</Link>
               </Button>
             </motion.div>
           </div>
