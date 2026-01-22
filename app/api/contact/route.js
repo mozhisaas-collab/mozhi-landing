@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, company, service, details } = body;
+    const { firstName, lastName, email, phone, company, service, details } = body;
 
     // ✅ Env validation (important for Vercel)
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -21,7 +21,7 @@ export async function POST(request) {
     const resend = new Resend(RESEND_API_KEY);
 
     // Validation
-    if (!firstName || !lastName || !email || !service) {
+    if (!firstName || !lastName || !email || !phone || !service) {
       return NextResponse.json(
         { success: false, message: 'Missing required fields' },
         { status: 400 }
@@ -163,6 +163,11 @@ export async function POST(request) {
                 <div class="value">${email}</div>
               </div>
 
+              <div class="field">
+                <span class="label">Phone Number</span>
+                <div class="value">${phone}</div>
+              </div>
+
               ${company ? `
               <div class="field">
                 <span class="label">Company</span>
@@ -203,6 +208,9 @@ ${firstName} ${lastName}
 
 EMAIL ADDRESS
 ${email}
+
+PHONE NUMBER
+${phone}
 
 ${company ? `COMPANY\n${company}\n` : ''}
 SERVICE REQUESTED

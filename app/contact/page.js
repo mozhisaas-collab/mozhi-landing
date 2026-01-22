@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
+import { Phone, Mail, Clock, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const contactInfo = [
@@ -19,12 +19,6 @@ const contactInfo = [
     title: "Email",
     details: ["info@mozhisolution.com"],
     link: "mailto:info@mozhisolution.com"
-  },
-  {
-    icon: MapPin,
-    title: "Address",
-    details: ["123 Business Ave, Suite 100", "New York, NY 10001"],
-    link: "#"
   },
   {
     icon: Clock,

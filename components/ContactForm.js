@@ -28,6 +28,7 @@ const contactSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Invalid email address"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits").regex(/^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/, "Invalid phone number format"),
   company: z.string().optional(),
   service: z.string().min(1, "Please select a service"),
   details: z.string().optional(),
@@ -43,6 +44,7 @@ export default function ContactForm() {
       firstName: "",
       lastName: "",
       email: "",
+      phone: "",
       company: "",
       service: "",
       details: "",
@@ -151,6 +153,25 @@ export default function ContactForm() {
                   <Input
                     type="email"
                     placeholder="your.email@company.com"
+                    className="bg-white border-black/10 text-black placeholder:text-black/50 focus:border-red-500"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-black font-medium">Phone Number *</FormLabel>
+                <FormControl>
+                  <Input
+                    type="tel"
+                    placeholder="+1 (555) 123-4567"
                     className="bg-white border-black/10 text-black placeholder:text-black/50 focus:border-red-500"
                     {...field}
                   />

@@ -602,7 +602,7 @@ export default function Navigation() {
             </Button>
 
             {/* Language Selector */}
-            <DropdownMenu>
+            {/* <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="transition-smooth hover-lift  text-black">
                   <Globe className="h-5 w-5" />
@@ -624,7 +624,7 @@ export default function Navigation() {
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
-            </DropdownMenu>
+            </DropdownMenu> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -890,7 +890,7 @@ export default function Navigation() {
                 </div>
 
                 {/* Language Selector for Mobile */}
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   <h4 className="font-semibold text-black mb-2 text-xs uppercase">Language</h4>
                   <div className="grid grid-cols-2 gap-2">
                     {languages.map((lang) => (
@@ -909,7 +909,7 @@ export default function Navigation() {
                       </button>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </motion.div>
