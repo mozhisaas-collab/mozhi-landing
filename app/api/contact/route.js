@@ -1,12 +1,24 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request) {
   try {
     const body = await request.json();
     const { firstName, lastName, email, company, service, details } = body;
+
+    // ✅ Env validation (important for Vercel)
+    const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'pratheep@mozhisolution.com';
+
+    if (!RESEND_API_KEY) {
+      return NextResponse.json(
+        { success: false, message: 'Server configuration error: RESEND_API_KEY missing' },
+        { status: 500 }
+      );
+    }
+
+    // ✅ Create resend instance INSIDE function
+    const resend = new Resend(RESEND_API_KEY);
 
     // Validation
     if (!firstName || !lastName || !email || !service) {
@@ -33,8 +45,8 @@ export async function POST(request) {
         .join(' ');
     };
 
-    // Prepare email content
     const emailSubject = `New Quote Request - ${firstName} ${lastName}`;
+
     const emailHtml = `
       <!DOCTYPE html>
       <html lang="en">
@@ -86,9 +98,6 @@ export async function POST(request) {
             .field { 
               margin-bottom: 28px; 
             }
-            .field:last-of-type {
-              margin-bottom: 0;
-            }
             .label { 
               font-weight: 600; 
               color: #111827; 
@@ -107,14 +116,6 @@ export async function POST(request) {
               font-size: 15px;
               line-height: 1.6;
               word-wrap: break-word;
-            }
-            .value a {
-              color: #dc2626;
-              text-decoration: none;
-              font-weight: 500;
-            }
-            .value a:hover {
-              text-decoration: underline;
             }
             .divider {
               height: 1px;
@@ -138,11 +139,6 @@ export async function POST(request) {
               font-size: 12px;
               margin-top: 8px;
             }
-            @media only screen and (max-width: 600px) {
-              .content { padding: 30px 20px; }
-              .header { padding: 30px 20px; }
-              .header h1 { font-size: 24px; }
-            }
           </style>
         </head>
         <body>
@@ -151,44 +147,43 @@ export async function POST(request) {
               <h1>New Quote Request</h1>
               <p>Mozhi Solutions</p>
             </div>
+
             <div class="content">
               <p class="intro-text">
                 You have received a new quote request. Please review the details below and respond accordingly.
               </p>
-              
+
               <div class="field">
                 <span class="label">Contact Name</span>
                 <div class="value">${firstName} ${lastName}</div>
               </div>
-              
+
               <div class="field">
                 <span class="label">Email Address</span>
-                <div class="value"><a href="mailto:${email}">${email}</a></div>
+                <div class="value">${email}</div>
               </div>
-              
+
               ${company ? `
               <div class="field">
                 <span class="label">Company</span>
                 <div class="value">${company}</div>
-              </div>
-              ` : ''}
-              
+              </div>` : ''}
+
               <div class="field">
                 <span class="label">Service Requested</span>
                 <div class="value">${formatServiceName(service)}</div>
               </div>
-              
+
               ${details ? `
               <div class="divider"></div>
               <div class="field">
                 <span class="label">Project Details</span>
                 <div class="value">${details.replace(/\n/g, '<br>')}</div>
-              </div>
-              ` : ''}
-              
+              </div>` : ''}
+
               <div class="footer">
                 <p><strong>Quote Request Received</strong></p>
-                <p class="footer-time">${new Date().toLocaleString('en-US', {
+                <p class="footer-time">${new Date().toLocaleString('en-IN', {
       dateStyle: 'full',
       timeStyle: 'short',
       timeZone: 'Asia/Kolkata'
@@ -203,42 +198,28 @@ export async function POST(request) {
     const emailText = `
 NEW QUOTE REQUEST - Mozhi Solutions
 
-You have received a new quote request. Please review the details below and respond accordingly.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 CONTACT NAME
 ${firstName} ${lastName}
 
 EMAIL ADDRESS
 ${email}
-${company ? `
-COMPANY
-${company}
-` : ''}
+
+${company ? `COMPANY\n${company}\n` : ''}
 SERVICE REQUESTED
 ${formatServiceName(service)}
-${details ? `
-PROJECT DETAILS
-${details}
-` : ''}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Quote Request Received: ${new Date().toLocaleString('en-US', {
+${details ? `PROJECT DETAILS\n${details}\n` : ''}
+
+Quote Request Received: ${new Date().toLocaleString('en-IN', {
       dateStyle: 'full',
       timeStyle: 'short',
       timeZone: 'Asia/Kolkata'
     })}
     `;
 
-    // Email configuration:
-    // from: The sender email address (must be verified in Resend)
-    // to: The recipient email (uses CONTACT_EMAIL env var or defaults to pratheep@mozhisolution.com)
-    // from: The sender email (using Resend's verified domain until mozhisolution.com is verified)
-    // reply_to: The email address that will receive replies
     await resend.emails.send({
       from: 'Mozhi Solutions <onboarding@resend.dev>',
-      to: process.env.CONTACT_EMAIL,
+      to: CONTACT_EMAIL,
       replyTo: email,
       subject: emailSubject,
       html: emailHtml,
@@ -246,19 +227,14 @@ Quote Request Received: ${new Date().toLocaleString('en-US', {
     });
 
     return NextResponse.json(
-      {
-        success: true,
-        message: 'Thank you! We\'ll get back to you within 2 hours during business days.'
-      },
+      { success: true, message: "Thank you! We'll get back to you within 2 hours during business days." },
       { status: 200 }
     );
-
   } catch (error) {
+    console.error('Contact API Error:', error);
+
     return NextResponse.json(
-      {
-        success: false,
-        message: 'Something went wrong. Please try again or email us directly at pratheep@mozhisolution.com'
-      },
+      { success: false, message: 'Something went wrong. Please try again later.' },
       { status: 500 }
     );
   }
