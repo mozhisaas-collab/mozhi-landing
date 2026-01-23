@@ -31,7 +31,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/world_map_global_con_7143728f.jpg"
@@ -48,38 +48,39 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
       />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 w-full">
         <motion.div 
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <div>
+          <div className="w-full">
             <motion.h1 
-              className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6"
               variants={itemVariants}
             >
              Professional Translation & Localization Services
             </motion.h1>
             <motion.p 
-              className="text-xl text-white/95 mb-8 leading-relaxed"
+              className="text-base sm:text-lg lg:text-xl text-white/95 mb-6 sm:mb-8 leading-relaxed"
               variants={itemVariants}
             >
             Bridge language barriers and expand your global reach with our expert translation services. Trusted by Fortune 500 companies across 15+ industries.
             </motion.p>
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 mb-8"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8"
               variants={itemVariants}
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
               <Button 
                 asChild
                 size="lg" 
-                  className="bg-white text-red-500 hover:bg-white/90 min-h-12 px-8 font-semibold"
+                  className="bg-white text-red-500 hover:bg-white/90 min-h-12 px-6 sm:px-8 font-semibold w-full sm:w-auto"
               >
                 <Link href="/contact">Get Free Quote</Link>
               </Button>
@@ -87,19 +88,20 @@ export default function Hero() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
               <Button 
                 asChild
                 size="lg" 
                 variant="outline"
-                className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white/20 min-h-12 px-8"
+                className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white/20 min-h-12 px-6 sm:px-8 w-full sm:w-auto"
               >
                 <Link href="/blog">View Our Work</Link>
               </Button>
               </motion.div>
             </motion.div>
             <motion.div 
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 text-white/90 text-sm"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 text-white/90 text-sm sm:text-base pb-4 sm:pb-0"
               variants={itemVariants}
             >
               {[
@@ -115,7 +117,7 @@ export default function Hero() {
                   transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                   whileHover={{ scale: 1.1 }}
                 >
-                  <CheckCircle className="h-5 w-5 text-red-500" />
+                  <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-red-500 shrink-0" />
                   <span>{item.text}</span>
                 </motion.div>
               ))}

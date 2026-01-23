@@ -171,7 +171,7 @@ export default function ContactForm() {
                 <FormControl>
                   <Input
                     type="tel"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="Enter your phone number"
                     className="bg-white border-black/10 text-black placeholder:text-black/50 focus:border-red-500"
                     {...field}
                   />
